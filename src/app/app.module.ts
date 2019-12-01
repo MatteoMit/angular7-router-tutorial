@@ -6,14 +6,18 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 
-import { HomeComponent } from './app/components/home';
-import { AboutComponent } from './app/components/about';
-import { DashboardComponent } from './app/components/dashboard';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+import { appRoutes } from './routerConfig';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, RouterModule ],
-  declarations: [ AppComponent, HelloComponent ],
+  imports:      [ BrowserModule, FormsModule, RouterModule, 
+                  RouterModule.forRoot(appRoutes)],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, AboutComponent, DashboardComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
+
